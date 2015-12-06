@@ -1,7 +1,11 @@
+D:\Git\MyBlog\Source\Blog\Blog.Web\obj\Debug\Blog.Web.csprojResolveAssemblyReference.cache
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Web.dll.config
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Web.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Web.pdb
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Antlr3.Runtime.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Common.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.DTO.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Service.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\EntityFramework.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\EntityFramework.SqlServer.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Microsoft.AspNet.Identity.Core.dll
@@ -27,6 +31,9 @@ D:\Git\MyBlog\Source\Blog\Blog.Web\bin\System.Web.WebPages.Deployment.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\System.Web.WebPages.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\System.Web.WebPages.Razor.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\WebGrease.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Common.pdb
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.DTO.pdb
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Service.pdb
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\System.Web.Helpers.xml
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\System.Web.Mvc.xml
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\System.Web.Optimization.xml
@@ -69,6 +76,13 @@ D:\Git\MyBlog\Source\Blog\Blog.Web\bin\zh-Hans\Microsoft.Owin.Security.Facebook.
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-D:\Git\MyBlog\Source\Blog\Blog.Web\obj\Debug\Blog.Web.csprojResolveAssemblyReference.cache
 D:\Git\MyBlog\Source\Blog\Blog.Web\obj\Debug\Blog.Web.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\obj\Debug\Blog.Web.pdb
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Repository.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Autofac.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Repository.pdb
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Autofac.xml
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\AutoMapper.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\AutoMapper.xml
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Entity.dll
+D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Entity.pdb
