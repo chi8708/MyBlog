@@ -225,6 +225,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.DTO\Blog.DTO.csproj">
+      <Project>{8e038d74-e848-432b-b4b3-c89d5c159687}</Project>
+      <Name>Blog.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Service\Blog.Service.csproj">
+      <Project>{407087df-111f-419a-bd92-adbcdf0d7ed7}</Project>
+      <Name>Blog.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -41,6 +41,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.DTO\Blog.DTO.csproj">
+      <Project>{8e038d74-e848-432b-b4b3-c89d5c159687}</Project>
+      <Name>Blog.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Repository\Blog.Repository.csproj">
+      <Project>{b1ed814f-3934-48c6-861f-1257a14d33d4}</Project>
+      <Name>Blog.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
