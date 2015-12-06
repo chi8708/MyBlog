@@ -1,0 +1,4 @@
+D:\Git\MyBlog\Source\Blog\Blog.Repository\bin\Debug\Blog.Repository.dll
+D:\Git\MyBlog\Source\Blog\Blog.Repository\bin\Debug\Blog.Repository.pdb
+D:\Git\MyBlog\Source\Blog\Blog.Repository\obj\Debug\Blog.Repository.dll
+D:\Git\MyBlog\Source\Blog\Blog.Repository\obj\Debug\Blog.Repository.pdb
