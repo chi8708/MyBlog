@@ -1,0 +1,36 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ Assembly Name="$(SolutionDir)\Blog.Entity\bin\Debug\Blog.Entity.dll" #>
+<#@ Assembly Name="$(SolutionDir)\Blog.Entity\bin\Debug\EntityFramework.dll" #>
+<#@ import namespace="Blog.Entity.Mapping" #>
+<#@ include file="RepositoryTemplate.tt" #>
+<#
+    string curPath = Path.GetDirectoryName(Host.TemplateFile);
+    string destPath = Path.Combine(curPath, "");
+    if(!Directory.Exists(destPath))
+    {
+        Directory.CreateDirectory(destPath);
+    }
+
+    var pros = typeof(BlogContext).GetProperties();
+    foreach (var pro in pros)
+    {
+        var typeName = pro.GetGetMethod().ReturnType.Name;
+
+        if (typeName == "DbSet`1")
+        {
+            var className=pro.Name;
+            IRepositoryTemplate template = new IRepositoryTemplate(className);
+            string fileName = string.Format(@"{0}\{1}.cs", destPath, className+"Repository");
+
+            template.Output.Encoding = Encoding.UTF8;
+            template.RenderToFile(fileName);
+        }
+    }
+    
+ #>

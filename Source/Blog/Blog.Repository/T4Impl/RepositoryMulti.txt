@@ -1,0 +1,2 @@
+﻿//添加此句防止模板文件生成.CS 包含ErrorGeneration
+

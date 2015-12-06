@@ -1,0 +1,33 @@
+﻿//添加此句防止模板文件生成.CS 包含ErrorGeneration
+<#@ output extension=".txt" #>
+<#+
+public class IRepositoryTemplate:CSharpTemplate
+{
+    private string _className;
+
+    public IRepositoryTemplate(string className)
+    {
+        _className = className;
+    }
+
+	public override string TransformText()
+	{
+#>
+using Blog.Entity.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blog.Repository
+{
+    public partial interface I<#=_className#>Repository:IBaseRepository<<#=_className#>>
+    {
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>
