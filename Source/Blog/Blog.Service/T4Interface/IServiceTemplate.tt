@@ -1,0 +1,33 @@
+﻿//添加此句防止模板文件生成.CS 包含ErrorGeneratingOutput
+<#@ output extension=".txt" #>
+<#+
+public class IServiceTemplate:CSharpTemplate
+{
+    private string _className;
+
+    public IServiceTemplate(string className)
+    {
+        _className = className;
+    }
+
+	public override string TransformText()
+	{
+#>
+using Blog.Entity.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blog.Service
+{
+    public partial interface I<#=_className#>Service:IBaseService<<#=_className#>>
+    {
+    }
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

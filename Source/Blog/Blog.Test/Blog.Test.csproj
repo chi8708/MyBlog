@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{407087DF-111F-419A-BD92-ADBCDF0D7ED7}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{C1EEE903-49DE-4557-BE81-8B3AF8DFF014}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blog.Service</RootNamespace>
-    <AssemblyName>Blog.Service</AssemblyName>
+    <RootNamespace>Blog.Test</RootNamespace>
+    <AssemblyName>Blog.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,12 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBaseService.cs" />
-    <Compile Include="Impl\BaseService.cs" />
-    <Compile Include="Impl\RespositoryContainner.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="T4Imp\UserInfoService.cs" />
-    <Compile Include="T4Interface\IUserInfoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Common\Blog.Common.csproj">
@@ -67,59 +64,10 @@
       <Project>{b1ed814f-3934-48c6-861f-1257a14d33d4}</Project>
       <Name>Blog.Repository</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="T4Imp\ServiceMulti.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastOutputs>
-.\ServiceMulti.txt
-.\UserInfoService.cs
-</LastOutputs>
-      <LastGenOutput>ServiceMulti.txt</LastGenOutput>
-    </None>
-    <None Include="T4Imp\ServiceTemplate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ServiceTemplate.txt</LastGenOutput>
-    </None>
-    <None Include="T4Interface\IServiceMulti.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IServiceMulti.txt</LastGenOutput>
-      <LastOutputs>
-.\IServiceMulti.txt
-.\IUserInfoService.cs
-</LastOutputs>
-    </None>
-    <None Include="T4Interface\IServiceTemplate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IServiceTemplate.txt</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="T4Imp\ServiceMulti.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceMulti.tt</DependentUpon>
-    </Content>
-    <Content Include="T4Imp\ServiceTemplate.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ServiceTemplate.tt</DependentUpon>
-    </Content>
-    <Content Include="T4Interface\IServiceMulti.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IServiceMulti.tt</DependentUpon>
-    </Content>
-    <Content Include="T4Interface\IServiceTemplate.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IServiceTemplate.tt</DependentUpon>
-    </Content>
+    <ProjectReference Include="..\Blog.Service\Blog.Service.csproj">
+      <Project>{407087df-111f-419a-bd92-adbcdf0d7ed7}</Project>
+      <Name>Blog.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

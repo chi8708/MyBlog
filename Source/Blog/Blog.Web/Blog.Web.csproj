@@ -226,6 +226,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Blog.Common\Blog.Common.csproj">
+      <Project>{0d3b9bfd-81b8-4a7d-a44f-a07c7b733f2e}</Project>
+      <Name>Blog.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Blog.DTO\Blog.DTO.csproj">
       <Project>{8e038d74-e848-432b-b4b3-c89d5c159687}</Project>
       <Name>Blog.DTO</Name>

@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +48,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IDBContextFactory.cs" />
+    <Compile Include="IDBSession.cs" />
+    <Compile Include="Impl\BaseRepository.cs" />
+    <Compile Include="Impl\DBSession.cs" />
+    <Compile Include="Impl\EFContextFactory.cs" />
+    <Compile Include="Impl\UserInfoRepository.cs" />
+    <Compile Include="IUserInfoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4Impl\UserInfoRepository.cs" />
+    <Compile Include="T4Interface\IUserInfoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="T4Impl\RepositoryMulti.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RepositoryMulti.txt</LastGenOutput>
+      <LastOutputs>
+.\RepositoryMulti.txt
+.\UserInfoRepository.cs
+</LastOutputs>
+    </None>
+    <None Include="T4Impl\RepositoryTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RepositoryTemplate.txt</LastGenOutput>
+    </None>
+    <None Include="T4Interface\IRepositoryMulti.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepositoryMulti.txt</LastGenOutput>
+      <LastOutputs>
+.\IRepositoryMulti.txt
+.\IUserInfoRepository.cs
+</LastOutputs>
+    </None>
+    <None Include="T4Interface\IRepositoryTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IRepositoryTemplate.txt</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.Common\Blog.Common.csproj">
+      <Project>{0d3b9bfd-81b8-4a7d-a44f-a07c7b733f2e}</Project>
+      <Name>Blog.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.Entity\Blog.Entity.csproj">
+      <Project>{314e14a9-6798-4bd1-9b65-747c64451762}</Project>
+      <Name>Blog.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T4Impl\RepositoryMulti.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryMulti.tt</DependentUpon>
+    </Content>
+    <Content Include="T4Impl\RepositoryTemplate.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryTemplate.tt</DependentUpon>
+    </Content>
+    <Content Include="T4Interface\IRepositoryMulti.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IRepositoryMulti.tt</DependentUpon>
+    </Content>
+    <Content Include="T4Interface\IRepositoryTemplate.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IRepositoryTemplate.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
