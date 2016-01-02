@@ -25,7 +25,7 @@ namespace Blog.Entity.Mapping
 
         #region 属性
 
-        [Key]
+        [Key,StringLength(32)]
         public virtual string Id{ get; set; }
 
         /// <summary>

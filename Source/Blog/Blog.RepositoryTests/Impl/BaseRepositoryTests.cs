@@ -14,19 +14,22 @@ namespace Blog.Repository.Impl.Tests
     {
         IUserInfoRepository dal = new UserInfoRepository();
         IDBSession dbsession = new DBSession();
-
+        IVUserInfoRoleRepository viewDal = new VUserInfoRoleRepository();
         [TestMethod()]
         public void AddEntityTest()
         {
+            //var data= viewDal.LoadEntity(p=>true).ToList();
+            //int count = data.Count();
+
             UserInfo user = new UserInfo()
             {
-                UserName="test3",
-                Password="1234",
-                CreateTime=DateTime.Now,
-                Email="aaa@qq.com"
+                UserName = "test8",
+                Password = "1235",
+                CreateTime = DateTime.Now,
+                Email = "aaa@qq.com"
             };
             dal.AddEntity(user);
-           Assert.IsTrue(dbsession.SaveChanges()>0);
+            Assert.IsTrue(dbsession.SaveChanges() > 0);
         }
 
         [TestMethod()]

@@ -1,0 +1,120 @@
+﻿@using Blog.Entity.Mapping;
+@model Blog.Web.Models.ArticleVM
+@{
+    ViewBag.Title = "添加资讯";
+    Layout = "~/Areas/AdminConsole/Views/Shared/MainLayout.cshtml";
+}
+
+<div id="content-header">
+    <div id="breadcrumb">
+        <a href="@Url.Action("Index","Article")" title="文章列表" class="tip-bottom"><i class="icon-file"></i> 文章列表</a>
+        <a href="@Url.Action("Add","Article")" title="添加" class="tip-bottom"><i class="icon-file"></i> 添加文章</a>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget-box">
+            <div class="widget-title">
+                <h5>添加文章</h5>
+            </div>
+            <div class="widget-content nopadding">
+                @using (Ajax.BeginForm("Add", "Article", new AjaxOptions { HttpMethod = "post", OnBegin = "OnBegin", OnSuccess = "OnSuccess" }, new { @class = "form-horizontal" }))
+                {
+
+                    <div class="control-group">
+                        <label class="control-label">标题 :</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(p => p.Title, new { @class = "span6" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">副标题 :</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(p => p.SubTitle, new { @class = "span6" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">类别 :</label>
+                        <div class="controls">
+                            <select class="span6" multiple="" style="display: none;" required="true" name="Category" id="Category">
+                                @{
+                    var data = ViewBag.Cats as IList<ArticleCategory>;
+                    if (data != null && data.Count > 0)
+                    {
+                        foreach (var item in data)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    }
+                                }
+                            </select>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">内容 :</label>
+                        <div class="controls">
+                            <textarea name="Content" id="articleContent" required="true" style="width:85%;height:400px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">关键字 :</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(p => p.KeyWord, new { @class = "span6" })
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">点击率 :</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(p => p.Hit, new { @class = "span6" })
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="Cats" id="Cats" />
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" id="btn-Save" class="btn btn-success">保存</button>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+    <link rel="stylesheet" href="/content/kindeditor/themes/default/default.css" type="text/css" />
+    <link rel="stylesheet" href="/content/kindeditor/plugins/code/prettify.css" type="text/css" />
+    <script type="text/javascript" charset="utf-8" language="javascript" src="/content/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" charset="utf-8" language="javascript" src="/content/kindeditor/lang/zh_CN.js"></script>
+    <script type="text/javascript" charset="utf-8" language="javascript" src="/content/kindeditor/plugins/code/prettify.js"></script>
+    <script language="javascript" type="text/javascript" src="/Scripts/initKindEditor.js"></script>
+ 
+
+    <script type="text/javascript">
+        function OnBegin() {
+            var vals = new Array();
+
+            $("#s2id_Category li").each(function () {
+                var text = $(this).find("div").text();
+
+                $("#Category option").each(function () {
+                    if ($(this).text() == text) {
+                        vals.push($(this).val());
+                    }
+                })
+            });
+
+            $("#Cats").val(vals.join(","));
+        }
+    </script>
+}
+
+
+

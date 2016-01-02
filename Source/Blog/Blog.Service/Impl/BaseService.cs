@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Blog.Common;
 
-namespace Blog.Service
+namespace Blog.Service.Impl
 {
     public class BaseService<T>:IBaseService<T>
         where T:EntityBase,new()
@@ -58,6 +58,21 @@ namespace Blog.Service
         public IQueryable<T> LoadPageEntity<S>(System.Linq.Expressions.Expression<Func<T, bool>> whereLambda, int? pageIndex, int? pageSize, out int total, System.Linq.Expressions.Expression<Func<T, S>> orderLambda, bool isAsc)
         {
             return baseRepository.LoadPageEntity(whereLambda, pageIndex, pageSize, out total, orderLambda, isAsc);
+        }
+
+
+        public bool BatchDelteEntity(IList<T> entities)
+        {
+            if (entities==null||entities.Count<=0)
+            {
+                return false;
+            }
+            foreach (var item in entities)
+            {
+                baseRepository.DeleteEntity(item);
+            }
+
+            return DBSession.SaveChanges() > 0;
         }
     }
 }

@@ -48,9 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapping\Article.cs" />
+    <Compile Include="Mapping\ArticleCategory.cs" />
+    <Compile Include="Mapping\ArticleComment.cs" />
+    <Compile Include="Mapping\Article_Category.cs" />
     <Compile Include="Mapping\BlogContext.cs" />
     <Compile Include="Mapping\EntityBase.cs" />
     <Compile Include="Mapping\UserInfo.cs" />
+    <Compile Include="Mapping\UserInfo_Role.cs" />
+    <Compile Include="Mapping\UserRole.cs" />
+    <Compile Include="Mapping\VUserInfoRole.cs" />
+    <Compile Include="Mapping\VUserInforRoleMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

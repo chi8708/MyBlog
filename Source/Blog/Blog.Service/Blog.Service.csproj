@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,12 +44,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IArticleService.cs" />
+    <Compile Include="Impl\ArticleService.cs" />
+    <Compile Include="CondModel\ArticleCond.cs" />
+    <Compile Include="CondModel\PageList.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="Impl\BaseService.cs" />
     <Compile Include="Impl\RespositoryContainner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4Imp\ArticleCategoryService.cs" />
+    <Compile Include="T4Imp\ArticleCommentService.cs" />
+    <Compile Include="T4Imp\ArticleService.cs" />
+    <Compile Include="T4Imp\Article_CategoryService.cs" />
     <Compile Include="T4Imp\UserInfoService.cs" />
+    <Compile Include="T4Imp\UserInfo_RoleService.cs" />
+    <Compile Include="T4Imp\UserRoleService.cs" />
+    <Compile Include="T4Interface\IArticleCategoryService.cs" />
+    <Compile Include="T4Interface\IArticleCommentService.cs" />
+    <Compile Include="T4Interface\IArticleService.cs" />
+    <Compile Include="T4Interface\IArticle_CategoryService.cs" />
     <Compile Include="T4Interface\IUserInfoService.cs" />
+    <Compile Include="T4Interface\IUserInfo_RoleService.cs" />
+    <Compile Include="T4Interface\IUserRoleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.Common\Blog.Common.csproj">
@@ -73,8 +90,14 @@
     <None Include="T4Imp\ServiceMulti.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastOutputs>
+.\Article_CategoryService.cs
+.\ArticleCategoryService.cs
+.\ArticleCommentService.cs
+.\ArticleService.cs
 .\ServiceMulti.txt
+.\UserInfo_RoleService.cs
 .\UserInfoService.cs
+.\UserRoleService.cs
 </LastOutputs>
       <LastGenOutput>ServiceMulti.txt</LastGenOutput>
     </None>
@@ -86,8 +109,14 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IServiceMulti.txt</LastGenOutput>
       <LastOutputs>
+.\IArticle_CategoryService.cs
+.\IArticleCategoryService.cs
+.\IArticleCommentService.cs
+.\IArticleService.cs
 .\IServiceMulti.txt
+.\IUserInfo_RoleService.cs
 .\IUserInfoService.cs
+.\IUserRoleService.cs
 </LastOutputs>
     </None>
     <None Include="T4Interface\IServiceTemplate.tt">

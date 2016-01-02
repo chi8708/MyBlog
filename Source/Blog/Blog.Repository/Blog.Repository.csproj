@@ -48,17 +48,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IArticleRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IDBContextFactory.cs" />
     <Compile Include="IDBSession.cs" />
+    <Compile Include="Impl\ArticleRepository.cs" />
     <Compile Include="Impl\BaseRepository.cs" />
     <Compile Include="Impl\DBSession.cs" />
     <Compile Include="Impl\EFContextFactory.cs" />
     <Compile Include="Impl\UserInfoRepository.cs" />
     <Compile Include="IUserInfoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4Impl\ArticleCategoryRepository.cs" />
+    <Compile Include="T4Impl\ArticleCommentRepository.cs" />
+    <Compile Include="T4Impl\ArticleRepository.cs" />
+    <Compile Include="T4Impl\Article_CategoryRepository.cs" />
     <Compile Include="T4Impl\UserInfoRepository.cs" />
+    <Compile Include="T4Impl\UserInfo_RoleRepository.cs" />
+    <Compile Include="T4Impl\UserRoleRepository.cs" />
+    <Compile Include="T4Impl\VUserInfoRoleRepository.cs" />
+    <Compile Include="T4Interface\IArticleCategoryRepository.cs" />
+    <Compile Include="T4Interface\IArticleCommentRepository.cs" />
+    <Compile Include="T4Interface\IArticleRepository.cs" />
+    <Compile Include="T4Interface\IArticle_CategoryRepository.cs" />
     <Compile Include="T4Interface\IUserInfoRepository.cs" />
+    <Compile Include="T4Interface\IUserInfo_RoleRepository.cs" />
+    <Compile Include="T4Interface\IUserRoleRepository.cs" />
+    <Compile Include="T4Interface\IVUserInfoRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,8 +83,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RepositoryMulti.txt</LastGenOutput>
       <LastOutputs>
+.\Article_CategoryRepository.cs
+.\ArticleCategoryRepository.cs
+.\ArticleCommentRepository.cs
+.\ArticleRepository.cs
 .\RepositoryMulti.txt
+.\UserInfo_RoleRepository.cs
 .\UserInfoRepository.cs
+.\UserRoleRepository.cs
+.\VUserInfoRoleRepository.cs
 </LastOutputs>
     </None>
     <None Include="T4Impl\RepositoryTemplate.tt">
@@ -79,8 +102,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IRepositoryMulti.txt</LastGenOutput>
       <LastOutputs>
+.\IArticle_CategoryRepository.cs
+.\IArticleCategoryRepository.cs
+.\IArticleCommentRepository.cs
+.\IArticleRepository.cs
 .\IRepositoryMulti.txt
+.\IUserInfo_RoleRepository.cs
 .\IUserInfoRepository.cs
+.\IUserRoleRepository.cs
+.\IVUserInfoRoleRepository.cs
 </LastOutputs>
     </None>
     <None Include="T4Interface\IRepositoryTemplate.tt">

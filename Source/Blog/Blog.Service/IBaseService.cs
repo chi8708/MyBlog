@@ -17,6 +17,8 @@ namespace Blog.Service
 
         bool DeleteEntity(T entity);
 
+        bool BatchDelteEntity(IList<T> entities);
+
         IQueryable<T> LoadEntity(Expression<Func<T, bool>> whereLambda);
 
         IQueryable<T> LoadPageEntity<S>(Expression<Func<T, bool>> whereLambda, int? pageIndex, int? pageSize, out int total, Expression<Func<T, S>> orderLambda, bool isAsc);

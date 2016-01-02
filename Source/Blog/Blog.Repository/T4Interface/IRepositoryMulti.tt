@@ -5,9 +5,9 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ include file="T4Toolbox.tt" #>
-<#@ Assembly Name="$(SolutionDir)\Blog.Repository\bin\Debug\Blog.Repository.dll" #>
-<#@ Assembly Name="$(SolutionDir)\Blog.Repository\bin\Debug\EntityFramework.dll" #>
-<#@ import namespace="Blog.Repository.Entity" #>
+<#@ Assembly Name="$(SolutionDir)\Blog.Entity\bin\Debug\Blog.Entity.dll" #>
+<#@ Assembly Name="$(SolutionDir)\Blog.Entity\bin\Debug\EntityFramework.dll" #>
+<#@ import namespace="Blog.Entity.Mapping" #>
 <#@ include file="IRepositoryTemplate.tt" #>
 <#
     string curPath = Path.GetDirectoryName(Host.TemplateFile);

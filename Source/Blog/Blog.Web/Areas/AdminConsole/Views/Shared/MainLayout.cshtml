@@ -1,0 +1,127 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>博客管理-@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/bundles/AdminCSS")
+    @Styles.Render("~/bundles/AdminFont")
+    <link rel="stylesheet" href="/Scripts/Admin/css/select2.css" />
+    <style type="text/css">
+        #content {
+            min-height:84%;
+        }
+        #sidebar  {
+            font-size: 14px;
+        }
+        .input-validation-error {
+            border: 1px solid #ff0000 !important;
+        }
+    </style>
+    @RenderSection("headers",required:false)
+</head>
+<body>
+    <!--Header-part-->
+    <div id="header">
+        <h1><a href="dashboard.html">Matrix Admin</a></h1>
+    </div>
+    <!--close-Header-part-->
+    <!--top-Header-menu-->
+    <!--close-top-Header-menu-->
+    <!--start-top-serch-->
+    <div id="search">
+        <input type="text" placeholder="Search here..." />
+        <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+    </div>
+    <!--close-top-serch-->
+    <!--sidebar-menu-->
+    <div id="sidebar">
+        <a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+        <ul>
+            <li ><a href="@Url.Action("index","Home")"><i class="icon icon-home"></i> <span>面板</span></a> </li>
+            <li><a href="index.html"><i class="icon icon-user"></i> <span>用户管理</span></a> </li>
+            <li class="submenu @((controller == "article") ? "open" :"")">
+                <a href="charts.html"><i class="icon icon-file"></i> <span>文章管理</span></a>
+                <ul>
+                    <li class="@((controller == "article" && action == "index") ? "active" :"")">
+                    <a href="@Url.Action("Index", "Article")">文章发布</a></li>
+                    <li class="@((controller == "article" && action == "categorylist") ? "active" :"")">
+                    <a href="@Url.Action("CategoryList", "Article")">文章分类</a></li>
+                </ul>
+            </li>
+            <li class="submenu">
+                <a href="#"><i class="icon icon-th-list"></i> <span>系统设置</span> <span class="label label-important">3</span></a>
+                <ul>
+                    <li><a href="/html/matrix-admin/form-common.html">地区配置</a></li>
+                    <li><a href="form-validation.html">SEO优化</a></li>
+                </ul>
+            </li>
+            <li class="content">
+                <span>Disk Space Usage</span>
+                <div class="progress progress-mini active progress-striped">
+                    <div style="width: 87%;" class="bar"></div>
+                </div>
+                <span class="percent">87%</span>
+                <div class="stat">604.44 / 4000 MB</div>
+            </li>
+        </ul>
+    </div>
+    <!--sidebar-menu-->
+    <!--main-container-part-->
+    <div id="content">
+        @RenderBody()
+    </div>
+    <!--end-main-container-part-->
+    <!--Footer-part-->
+    <div class="row-fluid">
+        <div id="footer" class="span12"> 2015 &copy; cts博客后台管理系统 </div>
+    </div>
+    <script src="/Scripts/Admin/js/jquery.min.js"></script>
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryAjax")
+    <script src="/Scripts/Admin/js/jquery.ui.custom.js"></script>
+    <script src="/Scripts/Admin/js/bootstrap.min.js"></script>
+    <script src="/Scripts/Admin/js/jquery.uniform.js"></script>
+    <script src="/Scripts/Admin/js/select2.min.js"></script>
+    <script src="/Scripts/Admin/js/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/Admin/js/matrix.js"></script>
+    <script src="/Scripts/Admin/js/matrix.tables.js"></script>
+    <script src="~/Scripts/FormExtjs.js"></script>
+    <script src="/Scripts/Admin/js/select2.min.js"></script>
+
+     
+    @*<script src="/Scripts/Admin/js/matrix.form_common.js"></script>*@ 
+    <script type="text/javascript">
+        // This function is called from the pop-up menus to transfer to
+        // a different page. Ignore if the value returned is a null string:
+        function goPage(newURL) {
+
+            // if url is empty, skip the menu dividers and reset the menu selection to default
+            if (newURL != "") {
+
+                // if url is "-", it is this page -- reset the menu:
+                if (newURL == "-") {
+                    resetMenu();
+                }
+                    // else, send page to designated URL
+                else {
+                    document.location.href = newURL;
+                }
+            }
+        }
+
+        // resets the menu selection upon entry to this page:
+        function resetMenu() {
+            document.gomenu.selector.selectedIndex = 2;
+        }
+    </script>
+
+    @RenderSection("scripts",false)
+</body>
+</html>
