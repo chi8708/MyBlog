@@ -1,0 +1,67 @@
+﻿@model Blog.Web.Models.AccountVW
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cts博客系统-用户登录</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/bundles/AdminCSS")
+    @Styles.Render("~/bundles/AdminFont")
+    <link rel="stylesheet" href="/Scripts/Admin/css/matrix-login.css" />
+    <style type="text/css">
+        html, body {
+            height: initial;
+        }
+
+        .input-validation-error {
+            border: 1px solid #ff0000 !important;
+        }
+
+        .add-on {
+            margin-right: -5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loginbox">
+        @using (Ajax.BeginForm("Index", "Login", new AjaxOptions() { HttpMethod = "post", OnSuccess = "OnSuccess" }, new { id = "loginform", @class = "form-vertical" }))
+        {
+            <input type="hidden" name="ReturnUrl" value="@Request.QueryString["ReturnUrl"]" />
+            @Html.AntiForgeryToken()
+            <div class="control-group normal_text">
+                <h3><img src="/Scripts/Admin/img/logo.png" alt="Logo" /></h3>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="main_input_box">
+                        <span class="add-on bg_lg"><i class="icon-user"></i></span>
+                        @Html.TextBoxFor(p => p.UserName, new { placeholder = "用户名" })
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <div class="main_input_box">
+                        <span class="add-on bg_ly"><i class="icon-lock"></i></span>
+                        @Html.PasswordFor(p => p.Password, new { placeholder = "密码" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <span class="pull-right"><input type="submit" class="btn btn-success" value="登录" /></span>
+            </div>
+        }
+
+    </div>
+</body>
+</html>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jqueryAjax")
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/FormExtjs.js"></script>

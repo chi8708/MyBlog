@@ -184,15 +184,15 @@
     <Compile Include="Areas\AdminConsole\Controllers\BaseController.cs" />
     <Compile Include="Areas\AdminConsole\Controllers\HomeController.cs" />
     <Compile Include="Areas\AdminConsole\Controllers\KindeditorController.cs" />
+    <Compile Include="Areas\AdminConsole\Controllers\LoginController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AccountVW.cs" />
     <Compile Include="Models\ArticleVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -209,6 +209,7 @@
     <Content Include="Content\assets\images\sample_clients.png" />
     <Content Include="Content\assets\js\html5shiv.js" />
     <Content Include="Content\assets\js\template.js" />
+    <Content Include="Areas\AdminConsole\Views\Login\Index.cshtml" />
     <None Include="Content\bootstrap.css.bak" />
     <Content Include="Areas\AdminConsole\Views\Shared\MainLayout.cshtml" />
     <Content Include="Areas\AdminConsole\Views\Home\Index.cshtml" />
@@ -685,15 +686,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\MainLayout.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />

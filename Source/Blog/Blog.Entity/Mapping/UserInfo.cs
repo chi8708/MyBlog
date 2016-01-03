@@ -18,7 +18,7 @@ namespace Blog.Entity.Mapping
         [MaxLength(8)]
         public string TrueName { get; set; }
 
-        [MaxLength(16), Required]
+        [MaxLength(32), Required]
         public string Password { get; set; }
 
         [MaxLength(32)]

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Blog.Web.Areas.AdminConsole.Controllers
 {
+    [Authorize]
     public class BaseController : Controller
     {
 
@@ -28,5 +29,16 @@ namespace Blog.Web.Areas.AdminConsole.Controllers
             }
             return Json(new { Code = 0, Msg = sb.ToString() });
         }
+
+        //protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        //{
+        //    if (!User.Identity.IsAuthenticated)
+        //    {
+        //        var url = filterContext.HttpContext.Request.Url;
+        //        filterContext.HttpContext.Response.Redirect("/AdminConsole/Login?ReturnUrl=" + url);
+        //    }
+        //    base.OnActionExecuting(filterContext);
+        //}
+       
 	}
 }

@@ -3,6 +3,10 @@
 }
 
 function OnSuccess(data) {
+    if (data.RedirectNow && data.RedirectUrl) {
+        window.top.location = data.RedirectUrl;
+        return;
+    }
     if (data.Msg) {
         appendModel('提示', data.Msg);
         $('#saveTipModal').modal('show').css({
