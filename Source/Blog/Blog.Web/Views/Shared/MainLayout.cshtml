@@ -2,17 +2,22 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0"  />
     <title>cts博客- @ViewBag.Title</title>
     @Styles.Render("~/content/css")
     <link rel="shortcut icon" href="/Content/assets/images/gt_favicon.png">
     <!-- Custom styles -->
     <link rel="stylesheet" href="/Content/assets/css/styles.css">
+  
+    <link href="~/Content/public.css" rel="stylesheet" />
 </head>
 <body>
     <div class="home">
         @Html.Partial("Header")
-        @RenderBody()
+        <div id="main">
+            @RenderBody()
+        </div>
+
         @Html.Partial("Footer")
     </div>
     @Scripts.Render("~/bundles/jquery")

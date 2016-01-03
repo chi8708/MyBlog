@@ -49,6 +49,7 @@
     <Compile Include="LambdaExt.cs" />
     <Compile Include="MD5Encode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringUtil.cs" />
     <Compile Include="ValidateCode.cs" />
   </ItemGroup>
   <ItemGroup>

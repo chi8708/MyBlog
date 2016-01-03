@@ -2,6 +2,7 @@
 using Blog.IRepository;
 using Blog.Repository;
 using Blog.Repository.Impl;
+using Blog.Service.CondModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using Blog.Common;
 
 namespace Blog.Service.Impl
 {
@@ -24,10 +26,17 @@ namespace Blog.Service.Impl
             catDal = new ArticleCategoryRepository();
             art_catDal = new Article_CategoryRepository();
         }
-        public List<Article> GetPageWithCategory<S>(Expression<Func<Entity.Mapping.Article, bool>> whereLambda, int? pageIndex, int? pageSize, out int total, System.Linq.Expressions.Expression<Func<Article,S>> orderLambda, bool isAsc)
+        public List<Article> GetPageWithCategory<S>( ArticleCond cond, out int total, System.Linq.Expressions.Expression<Func<Article,S>> orderLambda, bool isAsc)
         {
+            Expression<Func<Article,bool>> whereLambda=p=>true;
+            if (!string.IsNullOrWhiteSpace(cond.CategoryId))
+            {
+                var artIds = art_catDal.LoadEntity(p => p.CategoryId == cond.CategoryId).Select(p=>p.ArticleId);
+                whereLambda = whereLambda.And(p => artIds.Contains(p.Id));
+            }
             //多次访问数据库 ，使用到遍历查询不要使用延迟加载，ToList（）减少查询次数，降低数据库压力
-            var data = dal.LoadPageEntity( whereLambda, pageIndex, pageSize, out total, orderLambda, isAsc).ToList();
+            var data = dal.LoadPageEntity(whereLambda, cond.PageIndex, cond.PageSize, out total, orderLambda, isAsc).ToList();
+
             return GetArticleListWithCategory(data);
         }
 

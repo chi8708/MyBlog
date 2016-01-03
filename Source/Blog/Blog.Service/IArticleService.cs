@@ -1,4 +1,5 @@
 ﻿using Blog.Entity.Mapping;
+using Blog.Service.CondModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Blog.Service
 {
     public partial interface IArticleService
     {
-         List<Article> GetPageWithCategory<S>(Expression<Func<Article, bool>> whereLambda, int? pageIndex, int? pageSize, out int total, System.Linq.Expressions.Expression<Func<Article, S>> orderLambda, bool isAsc);
+         List<Article> GetPageWithCategory<S>(ArticleCond cond, out int total, System.Linq.Expressions.Expression<Func<Article, S>> orderLambda, bool isAsc);
 
          Article AddArticle(Article model, string categories);
 

@@ -99,22 +99,24 @@
                 return false;
             }
             else {
-                var idsArr = new Array();
-                $checked.each(function () {
-                    idsArr.push($(this).val());
-                });
+                if (confirm("确定要删除？")) {
+                    var idsArr = new Array();
+                    $checked.each(function () {
+                        idsArr.push($(this).val());
+                    });
 
-                $.ajax(
-                    {
-                        url: "/AdminConsole/Article/Delete/",
-                        type: "post",
-                        traditional: true,//传递数组
-                        data: { ids: idsArr },
-                        success: function (data) {
-                            OnSuccess(data);
-                        }
-                    }
-                    );
+                    $.ajax(
+                        {
+                            url: "/AdminConsole/Article/Delete/",
+                            type: "post",
+                            traditional: true,//传递数组
+                            data: { ids: idsArr },
+                            success: function (data) {
+                                OnSuccess(data);
+                            }
+                        });
+                }
+
             }
         }
     </script>

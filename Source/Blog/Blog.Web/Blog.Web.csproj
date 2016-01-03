@@ -185,6 +185,8 @@
     <Compile Include="Areas\AdminConsole\Controllers\HomeController.cs" />
     <Compile Include="Areas\AdminConsole\Controllers\KindeditorController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -416,6 +418,7 @@
     <Content Include="Content\Kindeditor\themes\qq\editor.gif" />
     <Content Include="Content\Kindeditor\themes\qq\qq.css" />
     <Content Include="Content\Kindeditor\themes\simple\simple.css" />
+    <Content Include="Content\public.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -666,6 +669,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Error\HttpError500.cshtml" />
+    <None Include="Views\Shared\ErrorPageLayout.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -692,11 +697,15 @@
     <Content Include="Views\Shared\MainLayout.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Article\Detail.cshtml" />
+    <Content Include="Views\Error\HttpError404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdminConsole\Models\" />
     <Folder Include="Areas\AdminConsole\Views\Base\" />
+    <Folder Include="ErrorPage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

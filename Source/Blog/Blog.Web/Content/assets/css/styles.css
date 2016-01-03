@@ -143,7 +143,7 @@ body {
 **********************************************************************/
 p {
   line-height: 1.6em;
-  margin: 0 0 30px 0;
+   margin: 0 0 30px 0;  /*margin: 0 0 30px 0;*/
 }
 ul,
 ol {
@@ -470,22 +470,22 @@ img {
   opacity: 1;
 }
 /* pagination */
-.pagination > li > a {
+.pagination > a {
   color: #808080;
   border: 0 none;
   font-size: 20px;
   font-size: 1.25rem;
   font-family: Georgia, serif;
 }
-.pagination > li > a:hover {
+.pagination > a:hover {
   color: #000000;
   background: none;
 }
-.pagination > li.active > a {
+.pagination > a.active {
   color: #333333;
   background: none;
 }
-.pagination > li.active > a:hover {
+.pagination > a.active:hover {
   color: #000000;
   background: none;
 }
@@ -501,7 +501,7 @@ img {
   display: block;
   width: 100%;
   overflow: hidden;
-  margin: 0px 0 25px;
+  /*margin: 0px 0 25px;*/
   text-align: center;
   font-weight: 300;
   text-transform: uppercase;
@@ -526,7 +526,7 @@ img {
   position: absolute;
   height: 4px;
   top: .53em;
-  width: 400%;
+  width: 600%; /*width: 400%;*/
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }

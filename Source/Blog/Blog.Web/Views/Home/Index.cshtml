@@ -1,4 +1,108 @@
-﻿@{
+﻿@using Blog.Entity.Mapping;
+@{
     ViewBag.Title = "首页";
     Layout = "~/Views/Shared/MainLayout.cshtml";
+    var articles= ViewBag.Articles as List<Blog.Entity.Mapping.Article>;
 }
+
+<div class="container" style="width:100%;">
+
+    <div class="row section topspace">
+        <div class="col-md-12">
+            <p class="lead text-center text-muted">野生程序员一枚，主要涉足.Net开发~~<br />① 缺的东西迟早要补回来。 ②上坡是为下坡准备。</p>
+        </div>
+    </div> <!-- / section -->
+
+    <div class="row section featured topspace">
+        <h2 class="section-title"><span>博客</span></h2>
+        <div class="row">
+            @foreach (var article in articles)
+            {
+                <div class="col-sm-6 col-md-3">
+                    <h3 class="text-center" style="text-overflow:ellipsis;">
+                        <a href="@Url.Action("Detail", "Article", new { id=article.Id})" target="_blank">@Blog.Common.StringUtil.GetSubString(article.Title, 14, "...")</a> 
+                    </h3>
+                    <p class="t-lr articleContentCut">@(Blog.Common.StringUtil.ReplaceHtmlTag(article.Content, 80) + "...")</p>
+                    <p class="text-center"><a href="@Url.Action("Detail", "Article", new { id=article.Id})" target="_blank" class="btn btn-action">详细</a></p>
+                </div>
+            }
+
+        </div>
+    </div> <!-- / section -->
+
+    <div class="row section recentworks topspace">
+
+        <h2 class="section-title"><span>近期项目</span></h2>
+
+        <div class="thumbnails recentworks row">
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <a class="thumbnail" href="http://www.jsose.cn" target="_blank">
+                    <span class="img">
+                        <img src="/Content/assets/images/s1.jpg" alt="">
+                        <span class="cover"><span class="more">  查看 &rarr;</span></span>
+                    </span>
+                    <span class="title">东方商城</span>
+                </a>
+                <span class="details">涉及技术：asp.net mvc5.0、asp.net webapi2.0、IoC、 ODP.Net、Jquery、AngularJs</span>
+                <h4></h4>
+                <p></p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <a class="thumbnail" href="http://www.jsose.com" target="_blank">
+                    <span class="img">
+                        <img src="/Content/assets/images/s1.jpg" alt="">
+                        <span class="cover"><span class="more">查看 &rarr;</span></span>
+                    </span>
+                    <span class="title">江苏不锈钢电子交易中心官网</span>
+                </a>
+                <span class="details">涉及技术：asp.net mvc4.0、EF dbfrist、Jquery、Echarts</span>
+                <h4></h4>
+                <p></p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <a class="thumbnail" href="http://zq.jsose.cn" target="_blank">
+                    <span class="img">
+                        <img src="/Content/assets/images/s1.jpg" alt="">
+                        <span class="cover"><span class="more">查看 &rarr;</span></span>
+                    </span>
+                    <span class="title">东方商城-钢厂专区</span>
+                </a>
+                <span class="details">涉及技术：asp.net mvc5.0、EF codefrist、Jquery、signalr、Echarts</span>
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+
+    </div> <!-- /section -->
+
+    <div class="row section topspace" style="text-align:center;">
+        <div class="panel panel-cta">
+            <div class="panel-body">
+                <div class="col-lg-12">
+                    <p>
+                        个人开源项目
+                        <a href="https://github.com/chi8708 " target="_blank" class="btn btn-primary btn-lg" style="letter-spacing:5px;">git</a>
+                    </p>
+                </div>
+                @*<div class="col-lg-4 text-right">
+                    </div>*@
+            </div>
+        </div>
+    </div> <!-- /section -->
+
+    <div class="row section clients topspace t-a_c">
+        <h2 class="section-title"><span>联系方式</span></h2>
+        <div class="col-lg-12">
+            <p>
+                @*<img src="/Content/assets/images/sample_clients.png" alt="">*@
+                <span>Email:cts@ctsdns.com </span>
+                <span class="p-l_20"> Address:江苏省无锡市锡山区</span>
+            </p>
+        </div>
+    </div> <!-- /section -->
+
+</div>	<!-- /container -->
+

@@ -1,0 +1,30 @@
+﻿.t-a_c {
+    text-align:center;
+}
+.p-l_20 {
+    padding-left:20px;
+}
+.thumbnail:hover {
+    border:1px solid #428bca;
+    border-radius:10px;
+}
+.thumbnail img {
+     border-radius:10px;
+}
+.thumbnail:hover .cover {
+      border-radius:11px;
+}
+.t-lr {
+    text-align:justify;
+    text-justify:distribute;
+}
+
+/*首页*/
+.articleContentCut {
+    height:100px;overflow:hidden;line-height:25px;text-overflow:ellipsis;
+}
+
+/*文章列表*/
+/*.nav-side .active {
+    background-color:#ede6e6;
+}*/

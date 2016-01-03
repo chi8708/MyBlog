@@ -34,7 +34,7 @@ namespace Blog.Web.Areas.AdminConsole.Controllers
         public ActionResult Index(ArticleCond cond)
         {
             int count = 0;
-            var data = bll.GetPageWithCategory(p => true, cond.PageIndex, cond.PageSize, out count, p => p.CreateTime, false);
+            var data = bll.GetPageWithCategory(cond, out count, p => p.CreateTime, false);
             ViewBag.PageList = new PagedList<Article>(data, cond.PageIndex, cond.PageSize, count);
             return View();
         }
@@ -52,6 +52,7 @@ namespace Blog.Web.Areas.AdminConsole.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(ArticleVM viewModel, FormCollection form)
         {
 
@@ -85,6 +86,7 @@ namespace Blog.Web.Areas.AdminConsole.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edite(ArticleVM viewModel, FormCollection form)
         {
             if (!ModelState.IsValid)

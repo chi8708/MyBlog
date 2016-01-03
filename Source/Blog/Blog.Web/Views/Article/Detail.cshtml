@@ -1,0 +1,24 @@
+﻿@model Blog.Entity.Mapping.Article
+@{
+    ViewBag.Title = Model.Title+"-明细";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row topspace">
+        <div class="col-sm-12">
+            <article class="post">
+                <header class="entry-header">
+                    <h1 class="entry-title">@Model.Title</h1>
+                    <div class="entry-meta">
+                        <span class="posted-on"><time class="entry-date published">@(((DateTime)Model.CreateTime).ToString("yyyy年MM月dd日"))</time><span  style="float:right;">人气:@(Model.Hit.HasValue ? Model.Hit.Value : 10)</span></span>
+                    </div>
+                </header>
+                <div class="entry-content t-lr">
+                    @Html.Raw(Model.Content)
+                </div>
+            </article><!-- #post-## -->
+        </div>
+    </div> <!-- /row post  -->
+</div>

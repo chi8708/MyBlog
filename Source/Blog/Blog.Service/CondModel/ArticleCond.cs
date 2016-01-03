@@ -8,5 +8,6 @@ namespace Blog.Service.CondModel
 {
    public class ArticleCond:PageList
     {
+        public string CategoryId { get; set; }
     }
 }
