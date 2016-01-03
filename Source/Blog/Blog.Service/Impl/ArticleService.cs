@@ -107,5 +107,11 @@ namespace Blog.Service.Impl
                 return true;
             }
         }
+
+
+        public async Task<bool> UpdateArticleHit(Article article)
+        {
+            return await dal.UpdateArticleHit(article);
+        }
     }
 }

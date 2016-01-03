@@ -184,6 +184,7 @@
     <Compile Include="Areas\AdminConsole\Controllers\BaseController.cs" />
     <Compile Include="Areas\AdminConsole\Controllers\HomeController.cs" />
     <Compile Include="Areas\AdminConsole\Controllers\KindeditorController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -208,14 +209,14 @@
     <Content Include="Content\assets\images\sample_clients.png" />
     <Content Include="Content\assets\js\html5shiv.js" />
     <Content Include="Content\assets\js\template.js" />
-    <Content Include="Content\bootstrap.css" />
+    <None Include="Content\bootstrap.css.bak" />
     <Content Include="Areas\AdminConsole\Views\Shared\MainLayout.cshtml" />
     <Content Include="Areas\AdminConsole\Views\Home\Index.cshtml" />
     <Content Include="Areas\AdminConsole\Views\Article\Index.cshtml" />
     <Content Include="Areas\AdminConsole\Views\Article\CategoryList.cshtml" />
     <Content Include="Areas\AdminConsole\Views\Article\Add.cshtml" />
     <Content Include="Areas\AdminConsole\Views\Article\Edite.cshtml" />
-    <None Include="Content\bootstrap.min.css.bak" />
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Kindeditor\kindeditor-all-min.js" />
     <Content Include="Content\Kindeditor\kindeditor-all.js" />
@@ -670,6 +671,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Error\HttpError500.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
     <None Include="Views\Shared\ErrorPageLayout.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -681,7 +683,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
@@ -693,7 +694,6 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\MainLayout.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
@@ -706,6 +706,7 @@
     <Folder Include="Areas\AdminConsole\Models\" />
     <Folder Include="Areas\AdminConsole\Views\Base\" />
     <Folder Include="ErrorPage\" />
+    <Folder Include="Views\Abount\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

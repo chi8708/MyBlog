@@ -33,6 +33,7 @@ body {
   top: 0;
   left: 0;
   opacity: .85;
+  z-index:10;/*cts add*/
 }
 .navbar-collapse {
   -webkit-border-radius: 0;

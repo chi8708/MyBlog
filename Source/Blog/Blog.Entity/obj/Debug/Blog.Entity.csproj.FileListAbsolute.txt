@@ -7,4 +7,3 @@ D:\Git\MyBlog\Source\Blog\Blog.Entity\bin\Debug\EntityFramework.xml
 D:\Git\MyBlog\Source\Blog\Blog.Entity\bin\Debug\EntityFramework.SqlServer.xml
 D:\Git\MyBlog\Source\Blog\Blog.Entity\obj\Debug\Blog.Entity.dll
 D:\Git\MyBlog\Source\Blog\Blog.Entity\obj\Debug\Blog.Entity.pdb
-D:\Git\MyBlog\Source\Blog\Blog.Entity\obj\Debug\Blog.Entity.csprojResolveAssemblyReference.cache

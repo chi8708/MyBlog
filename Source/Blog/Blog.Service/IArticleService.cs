@@ -18,5 +18,7 @@ namespace Blog.Service
           List<Article> GetArticleListWithCategory(List<Article> data);
 
           bool EditeArticle(Article model, string categories);
+
+          Task<bool> UpdateArticleHit(Article article);
     }
 }
