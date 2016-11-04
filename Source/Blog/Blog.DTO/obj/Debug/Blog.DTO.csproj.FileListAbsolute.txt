@@ -1,4 +1,0 @@
-D:\Git\MyBlog\Source\Blog\Blog.DTO\bin\Debug\Blog.DTO.dll
-D:\Git\MyBlog\Source\Blog\Blog.DTO\bin\Debug\Blog.DTO.pdb
-D:\Git\MyBlog\Source\Blog\Blog.DTO\obj\Debug\Blog.DTO.dll
-D:\Git\MyBlog\Source\Blog\Blog.DTO\obj\Debug\Blog.DTO.pdb
