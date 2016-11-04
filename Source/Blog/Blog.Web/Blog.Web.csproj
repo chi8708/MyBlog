@@ -51,9 +51,8 @@
       <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LitJson, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LitJson.0.7.0\lib\LitJson.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="LitJSON">
+      <HintPath>..\library\LitJSON.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MvcPager, Version=2.0.0.1, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">

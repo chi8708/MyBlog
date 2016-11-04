@@ -8,7 +8,7 @@
     </WebStackScaffolding_LayoutPageFile>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <NameOfLastUsedPublishProfile>blogconfig</NameOfLastUsedPublishProfile>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
