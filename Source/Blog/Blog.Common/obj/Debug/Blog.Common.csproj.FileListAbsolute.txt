@@ -1,6 +1,0 @@
-D:\Git\MyBlog\Source\Blog\Blog.Common\bin\Debug\Blog.Common.dll
-D:\Git\MyBlog\Source\Blog\Blog.Common\bin\Debug\Blog.Common.pdb
-D:\Git\MyBlog\Source\Blog\Blog.Common\bin\Debug\AutoMapper.dll
-D:\Git\MyBlog\Source\Blog\Blog.Common\bin\Debug\AutoMapper.xml
-D:\Git\MyBlog\Source\Blog\Blog.Common\obj\Debug\Blog.Common.dll
-D:\Git\MyBlog\Source\Blog\Blog.Common\obj\Debug\Blog.Common.pdb

@@ -17,7 +17,9 @@ namespace Blog.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BundleConfig.RegisterBundlesAdmin(BundleTable.Bundles);
+            BundleTable.EnableOptimizations = false;
             ServiceContainer.RegisterContainer();
+          
         }
 
         //protected void Application_Error(object sender, EventArgs e)
