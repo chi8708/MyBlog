@@ -10,7 +10,6 @@ D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Entity.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Blog.Service.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\EntityFramework.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\EntityFramework.SqlServer.dll
-D:\Git\MyBlog\Source\Blog\Blog.Web\bin\LitJSON.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Microsoft.AspNet.Identity.Core.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Git\MyBlog\Source\Blog\Blog.Web\bin\Microsoft.AspNet.Identity.Owin.dll
