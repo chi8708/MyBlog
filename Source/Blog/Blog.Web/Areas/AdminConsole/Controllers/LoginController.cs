@@ -1,8 +1,10 @@
 ﻿using Blog.Service;
 using Blog.Service.Impl;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -46,11 +48,25 @@ namespace Blog.Web.Areas.AdminConsole.Controllers
                 {
 
                     #region 写入用户数据
-                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, model.UserName, DateTime.Now, DateTime.Now.Add(FormsAuthentication.Timeout), true, FormsAuthentication.FormsCookiePath);
-                    HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(ticket));
-                    cookie.Domain = FormsAuthentication.CookieDomain;
-                    cookie.Path = ticket.CookiePath;
-                    Response.Cookies.Add(cookie);
+                    //FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, model.UserName, DateTime.Now, DateTime.Now.Add(FormsAuthentication.Timeout), true, FormsAuthentication.FormsCookiePath);
+                    //HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, FormsAuthentication.Encrypt(ticket));
+                    //cookie.Domain = FormsAuthentication.CookieDomain;
+                    //cookie.Path = ticket.CookiePath;
+                    //Response.Cookies.Add(cookie);
+                    List<Claim> claims = new List<Claim>();
+
+                    claims.Add(new Claim(ClaimTypes.Name,model.UserName));
+
+                    claims.Add(new Claim(ClaimTypes.Role, "Administrator"));
+
+                    var id = new ClaimsIdentity(claims, DefaultAuthenticationTypes.ApplicationCookie);
+
+                    var ctx = Request.GetOwinContext();
+
+                    var authenticationManager = ctx.Authentication;
+
+                    authenticationManager.SignIn(id);
+
                     #endregion
 
                     Session["logOnAdministrator"] = model;
