@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Newtonsoft;
 
 namespace Blog.Web.Models
 {
@@ -56,9 +58,8 @@ namespace Blog.Web.Models
 
         public int Sort { get; set; }
         public string Remark { get; set; }
-
+        
         public DateTime? CreateTime { get; set; }
-
         public DateTime? EditeTime { get; set; }
     }
 }
